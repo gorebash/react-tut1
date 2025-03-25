@@ -1,9 +1,9 @@
+import { useLoaderData } from 'react-router-dom';
 import Post from './Post';
 import classes from './PostList.module.css';
-import { useState } from 'react';
 
 function PostList () {
-  const [posts, setPosts] = useState([]);
+  const posts = useLoaderData() || [];
 
   return (
     <>
