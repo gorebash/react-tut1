@@ -1,27 +1,12 @@
-import NewPost from './NewPost';
 import Post from './Post';
 import classes from './PostList.module.css';
-import Modal from './Modal';
 import { useState } from 'react';
 
-function PostList ({ isPosting, onStopPosting }) {
-
+function PostList () {
   const [posts, setPosts] = useState([]);
-
-  function addPostHandler (post) {
-    setPosts((existingState) => [post, ...existingState]);
-  }
 
   return (
     <>
-      {isPosting && (
-        <Modal onClose={onStopPosting}>
-          <NewPost
-            onCancel={onStopPosting}
-            onAddPost={addPostHandler} />
-        </Modal>
-      )}
-
       {posts.length > 0 && (
         <ul className={classes.posts}>
           { posts.map((p) => 
