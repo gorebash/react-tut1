@@ -10,7 +10,7 @@ function PostList () {
       {posts.length > 0 && (
         <ul className={classes.posts}>
           { posts.map((p) => 
-            <Post key={p.body} body={p.body} author={p.author} /> 
+            <Post key={p.id} id={p.id} body={p.body} author={p.author} /> 
           )}
         </ul>
       )}
